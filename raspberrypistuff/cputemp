@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+#https://dbader.org/blog/how-to-make-command-line-commands-with-python
+import subprocess
+out = subprocess.Popen(['vcgencmd', 'measure_temp'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+stdout, stderr = out.communicate()
+stdout = str(stdout)
+res = []
+res[:] = stdout
+mytemp = []
+for i in range(0, len(res)):
+	if res[i].isdigit():
+		mytemp.append(res[i])
+		mytemp.append(res[i+1])
+		mytemp.append(res[i+2])
+		mytemp.append(res[i+3])
+		break
+tempstring = "".join(mytemp)
+tempfloat = float(tempstring)
+fahrenheit = (tempfloat * 9/5) + 32
+goodtemp = (82 * 9/5) + 32
+
+degree_sign= u'\N{DEGREE SIGN}'
+print(f"CPU temperature: {fahrenheit} {degree_sign}F") 
+
+if fahrenheit >= goodtemp:
+	print("Unsafe CPU temperature: ")
+	yesorno = str(input("Shut Down?\n"))
+	if "y" in yesorno or "s" in yesorno:
+		os.system("sudo shutdown now -h")
