@@ -1,0 +1,4 @@
+Get Parantheses solver working
+Have a copy y/n prompt after the answer
+Get simplifier working
+Get quadratics solver working with quadratic formula and simple equations
