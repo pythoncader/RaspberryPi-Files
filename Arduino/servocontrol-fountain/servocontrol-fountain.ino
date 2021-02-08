@@ -1,48 +1,3 @@
- /*
- * Original sourse: https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library
- * 
- * This is the Arduino code PAC6985 16 channel servo controller
- * watch the video for details (V1) and demo http://youtu.be/y8X9X10Tn1k
- *  This code is #1 for V2 Video Watch the video :https://youtu.be/bal2STaoQ1M
- *  I have got 3 codes as follow:
-   #1-Arduino Code to run one by one all servos from 0 to 180°   
-   #2-Arduino Code to control specific servos with specific angle
-   #3-Arduino Code to run 2 or all servos at together
-   
- * Written/updated by Ahmad Shamshiri for Robojax Video channel www.Robojax.com
- * Date: Dec 16, 2017, in Ajax, Ontario, Canada
- * Permission granted to share this code given that this
- * note is kept with the code.
- * Disclaimer: this code is "AS IS" and for educational purpose only.
- * this code has been downloaded from http://robojax.com/learn/arduino/
- 
- * Get this code and other Arduino codes from Robojax.com
-Learn Arduino step by step in structured course with all material, wiring diagram and library
-all in once place. Purchase My course on Udemy.com http://robojax.com/L/?id=62
-
-****************************
-Get early access to my videos via Patreon and have  your name mentioned at end of very 
-videos I publish on YouTube here: http://robojax.com/L/?id=63 (watch until end of this video to list of my Patrons)
-****************************
-
-or make donation using PayPal http://robojax.com/L/?id=64
-
- *  * This code is "AS IS" without warranty or liability. Free to be used as long as you keep this note intact.* 
- * This code has been download from Robojax.com
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-  
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
-
 /*************************************************** 
   This is an example for our Adafruit 16-channel PWM & Servo driver
   Servo test - this will drive 16 servos, one after the other
@@ -159,9 +114,9 @@ void setup() {
   
   pwm.setPWMFreq(60);  // Analog servos run at ~60 Hz updates
   for(int i = 0; i<5; i++){
-    set_angle(i, 30, 0);
+    set_angle(i, 32, 0);
   }
-  delay(5000);
+  delay(10000);
 
   //yield();
 }
@@ -194,12 +149,12 @@ void loop() {
     delay(random(0, 300));
   }*/
   for(int i = 0; i<5; i++){
-    set_angle(i, 0, 0);
+    set_angle(i, 22, 0);
   }
-  delay(3 000);
+  delay(3000);
   
   for(int i = 0; i<5; i++){
-    set_angle(i, 60, 0);
+    set_angle(i, 38, 0);
   }
   delay(3000);
   /*
@@ -225,14 +180,3 @@ void loop() {
   delay(1000);*/
   
 }
-
-/*
-/* angleToPulse(int ang)
- * @brief gets angle in degree and returns the pulse width
- * @param "ang" is integer represending angle from 0 to 180
- * @return returns integer pulse width
- * Usage to use 65 degree: angleToPulse(65);
- * Written by Ahmad Shamshiri on Sep 17, 2019. 
- * in Ajax, Ontario, Canada
- * www.Robojax.com 
- */
