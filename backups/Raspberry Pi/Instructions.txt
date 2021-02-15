@@ -1,3 +1,0 @@
-https://pimylifeup.com/backup-raspberry-pi/
-Go to C:/raspberrypi.img in the win32 disk imager
-Choose the "boot" drive letter for the raspberry pi sd card (as opposed to the usb drive partition) The copier will copy all of the files on the drive, regardless of the partition.
